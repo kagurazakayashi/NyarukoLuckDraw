@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9406A2CD15D7575400410B44 /* CXCFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9406A2CC15D7575400410B44 /* CXCFilter.m */; };
+		944E59E115D5105900DFE2DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944E59E015D5105900DFE2DE /* Cocoa.framework */; };
+		944E59EB15D5105900DFE2DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 944E59E915D5105900DFE2DE /* InfoPlist.strings */; };
+		944E59ED15D5105900DFE2DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 944E59EC15D5105900DFE2DE /* main.m */; };
+		944E59F115D5105900DFE2DE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 944E59EF15D5105900DFE2DE /* Credits.rtf */; };
+		944E59F415D5105900DFE2DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 944E59F315D5105900DFE2DE /* AppDelegate.m */; };
+		944E59F715D5105900DFE2DE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944E59F515D5105900DFE2DE /* MainMenu.xib */; };
+		944E59FF15D5105900DFE2DE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944E59FE15D5105900DFE2DE /* SenTestingKit.framework */; };
+		944E5A0015D5105900DFE2DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944E59E015D5105900DFE2DE /* Cocoa.framework */; };
+		944E5A0815D5105900DFE2DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 944E5A0615D5105900DFE2DE /* InfoPlist.strings */; };
+		944E5A0B15D5105900DFE2DE /* cxcnamesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 944E5A0A15D5105900DFE2DE /* cxcnamesTests.m */; };
+		94D36D7D15E7BDFB0075246E /* WT1.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D36D7815E7BDFB0075246E /* WT1.png */; };
+		94D36D7E15E7BDFB0075246E /* WT2.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D36D7915E7BDFB0075246E /* WT2.png */; };
+		94D36D7F15E7BDFB0075246E /* WT3.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D36D7A15E7BDFB0075246E /* WT3.png */; };
+		94D36D8015E7BDFB0075246E /* WT4.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D36D7B15E7BDFB0075246E /* WT4.png */; };
+		94D36D8115E7BDFB0075246E /* WT5.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D36D7C15E7BDFB0075246E /* WT5.png */; };
+		94D6945015D5ED6400849C5E /* CXCStringToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D6944F15D5ED6400849C5E /* CXCStringToArray.m */; };
+		94DF3A4B15D54B7400F22A97 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DF3A4A15D54B7400F22A97 /* XMLReader.m */; };
+		94DF3A5415D54DC900F22A97 /* CXCFileExists.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DF3A5315D54DC900F22A97 /* CXCFileExists.m */; };
+		94DF3A5815D54F1D00F22A97 /* CXCFileIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DF3A5715D54F1D00F22A97 /* CXCFileIO.m */; };
+		94DF3A6C15D55E3A00F22A97 /* CXCOnline.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DF3A6B15D55E3A00F22A97 /* CXCOnline.m */; };
+		94EFC94F15E4D41C00DFB5C2 /* 123642P06-2a9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94EFC94E15E4D41C00DFB5C2 /* 123642P06-2a9.jpg */; };
+		94EFC96215E4DB6500DFB5C2 /* 655300.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EFC96115E4DB6500DFB5C2 /* 655300.png */; };
+		94EFC96C15E501A500DFB5C2 /* 23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94EFC96B15E501A500DFB5C2 /* 23.jpg */; };
+		94F6DEF315D7D19A001920C2 /* cat.icns in Resources */ = {isa = PBXBuildFile; fileRef = 94F6DEF215D7D19A001920C2 /* cat.icns */; };
+		94F94FEC15E86C8700536750 /* baijin.ep3 in Resources */ = {isa = PBXBuildFile; fileRef = 94F94FEB15E86C8700536750 /* baijin.ep3 */; };
+		94F94FEF15E86E8E00536750 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F94FEE15E86E8E00536750 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		944E5A0115D5105900DFE2DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 944E59D315D5105900DFE2DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 944E59DB15D5105900DFE2DE;
+			remoteInfo = cxcnames;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9406A2CB15D7575400410B44 /* CXCFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCFilter.h; sourceTree = "<group>"; };
+		9406A2CC15D7575400410B44 /* CXCFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCFilter.m; sourceTree = "<group>"; };
+		944E59DC15D5105900DFE2DE /* 抽签.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "抽签.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		944E59E015D5105900DFE2DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		944E59E315D5105900DFE2DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		944E59E415D5105900DFE2DE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		944E59E515D5105900DFE2DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		944E59E815D5105900DFE2DE /* cxcnames-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cxcnames-Info.plist"; sourceTree = "<group>"; };
+		944E59EA15D5105900DFE2DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		944E59EC15D5105900DFE2DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		944E59EE15D5105900DFE2DE /* cxcnames-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cxcnames-Prefix.pch"; sourceTree = "<group>"; };
+		944E59F015D5105900DFE2DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		944E59F215D5105900DFE2DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		944E59F315D5105900DFE2DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		944E59F615D5105900DFE2DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		944E59FD15D5105900DFE2DE /* cxcnamesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cxcnamesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		944E59FE15D5105900DFE2DE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		944E5A0515D5105900DFE2DE /* cxcnamesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cxcnamesTests-Info.plist"; sourceTree = "<group>"; };
+		944E5A0715D5105900DFE2DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		944E5A0915D5105900DFE2DE /* cxcnamesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cxcnamesTests.h; sourceTree = "<group>"; };
+		944E5A0A15D5105900DFE2DE /* cxcnamesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cxcnamesTests.m; sourceTree = "<group>"; };
+		94D36D7815E7BDFB0075246E /* WT1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT1.png; sourceTree = "<group>"; };
+		94D36D7915E7BDFB0075246E /* WT2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT2.png; sourceTree = "<group>"; };
+		94D36D7A15E7BDFB0075246E /* WT3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT3.png; sourceTree = "<group>"; };
+		94D36D7B15E7BDFB0075246E /* WT4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT4.png; sourceTree = "<group>"; };
+		94D36D7C15E7BDFB0075246E /* WT5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT5.png; sourceTree = "<group>"; };
+		94D6944E15D5ED6400849C5E /* CXCStringToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCStringToArray.h; sourceTree = "<group>"; };
+		94D6944F15D5ED6400849C5E /* CXCStringToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCStringToArray.m; sourceTree = "<group>"; };
+		94DF3A4915D54B7400F22A97 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		94DF3A4A15D54B7400F22A97 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		94DF3A5215D54DC900F22A97 /* CXCFileExists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCFileExists.h; sourceTree = "<group>"; };
+		94DF3A5315D54DC900F22A97 /* CXCFileExists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCFileExists.m; sourceTree = "<group>"; };
+		94DF3A5615D54F1D00F22A97 /* CXCFileIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCFileIO.h; sourceTree = "<group>"; };
+		94DF3A5715D54F1D00F22A97 /* CXCFileIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCFileIO.m; sourceTree = "<group>"; };
+		94DF3A6A15D55E3A00F22A97 /* CXCOnline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCOnline.h; sourceTree = "<group>"; };
+		94DF3A6B15D55E3A00F22A97 /* CXCOnline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXCOnline.m; sourceTree = "<group>"; };
+		94EFC94E15E4D41C00DFB5C2 /* 123642P06-2a9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "123642P06-2a9.jpg"; sourceTree = "<group>"; };
+		94EFC96115E4DB6500DFB5C2 /* 655300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 655300.png; sourceTree = "<group>"; };
+		94EFC96B15E501A500DFB5C2 /* 23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23.jpg; sourceTree = "<group>"; };
+		94F6DEF215D7D19A001920C2 /* cat.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cat.icns; sourceTree = "<group>"; };
+		94F94FEB15E86C8700536750 /* baijin.ep3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = baijin.ep3; sourceTree = "<group>"; };
+		94F94FEE15E86E8E00536750 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		944E59D915D5105900DFE2DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F94FEF15E86E8E00536750 /* AVFoundation.framework in Frameworks */,
+				944E59E115D5105900DFE2DE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		944E59F915D5105900DFE2DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944E59FF15D5105900DFE2DE /* SenTestingKit.framework in Frameworks */,
+				944E5A0015D5105900DFE2DE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9406A2CF15D7575800410B44 /* CXC数组过滤类 */ = {
+			isa = PBXGroup;
+			children = (
+				9406A2CB15D7575400410B44 /* CXCFilter.h */,
+				9406A2CC15D7575400410B44 /* CXCFilter.m */,
+			);
+			name = "CXC数组过滤类";
+			sourceTree = "<group>";
+		};
+		944E59D115D5105900DFE2DE = {
+			isa = PBXGroup;
+			children = (
+				94F94FEE15E86E8E00536750 /* AVFoundation.framework */,
+				94F6DEF215D7D19A001920C2 /* cat.icns */,
+				944E59E615D5105900DFE2DE /* cxcnames */,
+				944E5A0315D5105900DFE2DE /* cxcnamesTests */,
+				944E59DF15D5105900DFE2DE /* Frameworks */,
+				944E59DD15D5105900DFE2DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		944E59DD15D5105900DFE2DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				944E59DC15D5105900DFE2DE /* 抽签.app */,
+				944E59FD15D5105900DFE2DE /* cxcnamesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		944E59DF15D5105900DFE2DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				944E59E015D5105900DFE2DE /* Cocoa.framework */,
+				944E59FE15D5105900DFE2DE /* SenTestingKit.framework */,
+				944E59E215D5105900DFE2DE /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		944E59E215D5105900DFE2DE /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				944E59E315D5105900DFE2DE /* AppKit.framework */,
+				944E59E415D5105900DFE2DE /* CoreData.framework */,
+				944E59E515D5105900DFE2DE /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		944E59E615D5105900DFE2DE /* cxcnames */ = {
+			isa = PBXGroup;
+			children = (
+				94EFC94D15E4D40900DFB5C2 /* images */,
+				94DF3A5915D54F2200F22A97 /* CXC磁盘操作类(子类) */,
+				94DF3A5515D54DD600F22A97 /* CXC文件存在检查类 */,
+				94DF3A4D15D54B7C00F22A97 /* XML解析类 */,
+				949BC0BE15EF540000C72F31 /* CXC抽签程序主类 */,
+				949BC0BC15EF53E700C72F31 /* CXC视图设计 */,
+				944E59E715D5105900DFE2DE /* Supporting Files */,
+				94DF3A6D15D55E4100F22A97 /* CXC在线服务类 */,
+				94D6945215D5ED6900849C5E /* CXC字符串转换类 */,
+				9406A2CF15D7575800410B44 /* CXC数组过滤类 */,
+			);
+			path = cxcnames;
+			sourceTree = "<group>";
+		};
+		944E59E715D5105900DFE2DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				944E59E815D5105900DFE2DE /* cxcnames-Info.plist */,
+				944E59E915D5105900DFE2DE /* InfoPlist.strings */,
+				944E59EC15D5105900DFE2DE /* main.m */,
+				944E59EE15D5105900DFE2DE /* cxcnames-Prefix.pch */,
+				944E59EF15D5105900DFE2DE /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		944E5A0315D5105900DFE2DE /* cxcnamesTests */ = {
+			isa = PBXGroup;
+			children = (
+				944E5A0915D5105900DFE2DE /* cxcnamesTests.h */,
+				944E5A0A15D5105900DFE2DE /* cxcnamesTests.m */,
+				944E5A0415D5105900DFE2DE /* Supporting Files */,
+			);
+			path = cxcnamesTests;
+			sourceTree = "<group>";
+		};
+		944E5A0415D5105900DFE2DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				944E5A0515D5105900DFE2DE /* cxcnamesTests-Info.plist */,
+				944E5A0615D5105900DFE2DE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		949BC0BC15EF53E700C72F31 /* CXC视图设计 */ = {
+			isa = PBXGroup;
+			children = (
+				944E59F515D5105900DFE2DE /* MainMenu.xib */,
+			);
+			name = "CXC视图设计";
+			sourceTree = "<group>";
+		};
+		949BC0BE15EF540000C72F31 /* CXC抽签程序主类 */ = {
+			isa = PBXGroup;
+			children = (
+				944E59F215D5105900DFE2DE /* AppDelegate.h */,
+				944E59F315D5105900DFE2DE /* AppDelegate.m */,
+			);
+			name = "CXC抽签程序主类";
+			sourceTree = "<group>";
+		};
+		94D6945215D5ED6900849C5E /* CXC字符串转换类 */ = {
+			isa = PBXGroup;
+			children = (
+				94D6944E15D5ED6400849C5E /* CXCStringToArray.h */,
+				94D6944F15D5ED6400849C5E /* CXCStringToArray.m */,
+			);
+			name = "CXC字符串转换类";
+			sourceTree = "<group>";
+		};
+		94DF3A4D15D54B7C00F22A97 /* XML解析类 */ = {
+			isa = PBXGroup;
+			children = (
+				94DF3A4915D54B7400F22A97 /* XMLReader.h */,
+				94DF3A4A15D54B7400F22A97 /* XMLReader.m */,
+			);
+			name = "XML解析类";
+			sourceTree = "<group>";
+		};
+		94DF3A5515D54DD600F22A97 /* CXC文件存在检查类 */ = {
+			isa = PBXGroup;
+			children = (
+				94DF3A5215D54DC900F22A97 /* CXCFileExists.h */,
+				94DF3A5315D54DC900F22A97 /* CXCFileExists.m */,
+			);
+			name = "CXC文件存在检查类";
+			sourceTree = "<group>";
+		};
+		94DF3A5915D54F2200F22A97 /* CXC磁盘操作类(子类) */ = {
+			isa = PBXGroup;
+			children = (
+				94DF3A5615D54F1D00F22A97 /* CXCFileIO.h */,
+				94DF3A5715D54F1D00F22A97 /* CXCFileIO.m */,
+			);
+			name = "CXC磁盘操作类(子类)";
+			sourceTree = "<group>";
+		};
+		94DF3A6D15D55E4100F22A97 /* CXC在线服务类 */ = {
+			isa = PBXGroup;
+			children = (
+				94DF3A6A15D55E3A00F22A97 /* CXCOnline.h */,
+				94DF3A6B15D55E3A00F22A97 /* CXCOnline.m */,
+			);
+			name = "CXC在线服务类";
+			sourceTree = "<group>";
+		};
+		94EFC94D15E4D40900DFB5C2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				94F94FEB15E86C8700536750 /* baijin.ep3 */,
+				94D36D7815E7BDFB0075246E /* WT1.png */,
+				94D36D7915E7BDFB0075246E /* WT2.png */,
+				94D36D7A15E7BDFB0075246E /* WT3.png */,
+				94D36D7B15E7BDFB0075246E /* WT4.png */,
+				94D36D7C15E7BDFB0075246E /* WT5.png */,
+				94EFC96B15E501A500DFB5C2 /* 23.jpg */,
+				94EFC96115E4DB6500DFB5C2 /* 655300.png */,
+				94EFC94E15E4D41C00DFB5C2 /* 123642P06-2a9.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		944E59DB15D5105900DFE2DE /* 抽签 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 944E5A0E15D5105900DFE2DE /* Build configuration list for PBXNativeTarget "抽签" */;
+			buildPhases = (
+				944E59D815D5105900DFE2DE /* Sources */,
+				944E59D915D5105900DFE2DE /* Frameworks */,
+				944E59DA15D5105900DFE2DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "抽签";
+			productName = cxcnames;
+			productReference = 944E59DC15D5105900DFE2DE /* 抽签.app */;
+			productType = "com.apple.product-type.application";
+		};
+		944E59FC15D5105900DFE2DE /* cxcnamesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 944E5A1115D5105900DFE2DE /* Build configuration list for PBXNativeTarget "cxcnamesTests" */;
+			buildPhases = (
+				944E59F815D5105900DFE2DE /* Sources */,
+				944E59F915D5105900DFE2DE /* Frameworks */,
+				944E59FA15D5105900DFE2DE /* Resources */,
+				944E59FB15D5105900DFE2DE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				944E5A0215D5105900DFE2DE /* PBXTargetDependency */,
+			);
+			name = cxcnamesTests;
+			productName = cxcnamesTests;
+			productReference = 944E59FD15D5105900DFE2DE /* cxcnamesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		944E59D315D5105900DFE2DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Terence Chen";
+			};
+			buildConfigurationList = 944E59D615D5105900DFE2DE /* Build configuration list for PBXProject "cxcnames" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 944E59D115D5105900DFE2DE;
+			productRefGroup = 944E59DD15D5105900DFE2DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				944E59DB15D5105900DFE2DE /* 抽签 */,
+				944E59FC15D5105900DFE2DE /* cxcnamesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		944E59DA15D5105900DFE2DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944E59EB15D5105900DFE2DE /* InfoPlist.strings in Resources */,
+				944E59F115D5105900DFE2DE /* Credits.rtf in Resources */,
+				944E59F715D5105900DFE2DE /* MainMenu.xib in Resources */,
+				94F6DEF315D7D19A001920C2 /* cat.icns in Resources */,
+				94EFC94F15E4D41C00DFB5C2 /* 123642P06-2a9.jpg in Resources */,
+				94EFC96215E4DB6500DFB5C2 /* 655300.png in Resources */,
+				94EFC96C15E501A500DFB5C2 /* 23.jpg in Resources */,
+				94D36D7D15E7BDFB0075246E /* WT1.png in Resources */,
+				94D36D7E15E7BDFB0075246E /* WT2.png in Resources */,
+				94D36D7F15E7BDFB0075246E /* WT3.png in Resources */,
+				94D36D8015E7BDFB0075246E /* WT4.png in Resources */,
+				94D36D8115E7BDFB0075246E /* WT5.png in Resources */,
+				94F94FEC15E86C8700536750 /* baijin.ep3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		944E59FA15D5105900DFE2DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944E5A0815D5105900DFE2DE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		944E59FB15D5105900DFE2DE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		944E59D815D5105900DFE2DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944E59ED15D5105900DFE2DE /* main.m in Sources */,
+				944E59F415D5105900DFE2DE /* AppDelegate.m in Sources */,
+				94DF3A5415D54DC900F22A97 /* CXCFileExists.m in Sources */,
+				94DF3A5815D54F1D00F22A97 /* CXCFileIO.m in Sources */,
+				94DF3A6C15D55E3A00F22A97 /* CXCOnline.m in Sources */,
+				94D6945015D5ED6400849C5E /* CXCStringToArray.m in Sources */,
+				9406A2CD15D7575400410B44 /* CXCFilter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		944E59F815D5105900DFE2DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944E5A0B15D5105900DFE2DE /* cxcnamesTests.m in Sources */,
+				94DF3A4B15D54B7400F22A97 /* XMLReader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		944E5A0215D5105900DFE2DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 944E59DB15D5105900DFE2DE /* 抽签 */;
+			targetProxy = 944E5A0115D5105900DFE2DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		944E59E915D5105900DFE2DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				944E59EA15D5105900DFE2DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		944E59EF15D5105900DFE2DE /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				944E59F015D5105900DFE2DE /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		944E59F515D5105900DFE2DE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				944E59F615D5105900DFE2DE /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		944E5A0615D5105900DFE2DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				944E5A0715D5105900DFE2DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		944E5A0C15D5105900DFE2DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.7;
+			};
+			name = Debug;
+		};
+		944E5A0D15D5105900DFE2DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.7;
+			};
+			name = Release;
+		};
+		944E5A0F15D5105900DFE2DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cxcnames/cxcnames-Prefix.pch";
+				INFOPLIST_FILE = "cxcnames/cxcnames-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		944E5A1015D5105900DFE2DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cxcnames/cxcnames-Prefix.pch";
+				INFOPLIST_FILE = "cxcnames/cxcnames-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		944E5A1215D5105900DFE2DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/cxcnames.app/Contents/MacOS/cxcnames";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cxcnames/cxcnames-Prefix.pch";
+				INFOPLIST_FILE = "cxcnamesTests/cxcnamesTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		944E5A1315D5105900DFE2DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/cxcnames.app/Contents/MacOS/cxcnames";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cxcnames/cxcnames-Prefix.pch";
+				INFOPLIST_FILE = "cxcnamesTests/cxcnamesTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		944E59D615D5105900DFE2DE /* Build configuration list for PBXProject "cxcnames" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				944E5A0C15D5105900DFE2DE /* Debug */,
+				944E5A0D15D5105900DFE2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		944E5A0E15D5105900DFE2DE /* Build configuration list for PBXNativeTarget "抽签" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				944E5A0F15D5105900DFE2DE /* Debug */,
+				944E5A1015D5105900DFE2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		944E5A1115D5105900DFE2DE /* Build configuration list for PBXNativeTarget "cxcnamesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				944E5A1215D5105900DFE2DE /* Debug */,
+				944E5A1315D5105900DFE2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 944E59D315D5105900DFE2DE /* Project object */;
+}
