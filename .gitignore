@@ -1,0 +1,10 @@
+._*
+.DS_Store
+node_modules
+/index.html
+dist/*
+js/*
+*.exe
+design/*
+embedded-web-page_*.html
+data.json

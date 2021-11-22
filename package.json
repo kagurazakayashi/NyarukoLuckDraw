@@ -1,0 +1,49 @@
+{
+  "name": "nyarukoluckdraw",
+  "version": "3.0.0",
+  "description": "简易抽奖程序",
+  "main": "index.js",
+  "scripts": {
+    "release": "python3 src/yq/yqcss.py css/index.css src/index.css && gulp css html && rm -f src/index.css && mv dist/index.html ./index.html && webpack --mode=production --progress",
+    "debug": "python3 src/yq/yqcss.py css/index.css src/index.css && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html && webpack --mode=development --progress",
+    "html": "python3 src/yq/yqcss.py css/index.css src/index.css && python3 src/yq/yqcss.py templates dist && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html",
+    "clean": "rm -f index.html dist/* src/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kagurazakayashi/NyarukoLuckDraw.git"
+  },
+  "keywords": [
+    "抽奖"
+  ],
+  "author": "KagurazakaYashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kagurazakayashi/NyarukoLuckDraw/issues"
+  },
+  "homepage": "https://github.com/kagurazakayashi/NyarukoLuckDraw#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-typescript": "^0.14.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "typescript-eslint-parser": "^22.0.0",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "@types/echarts": "^4.9.7",
+    "echarts": "^5.1.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify": "^3.0.2",
+    "purecss": "^2.0.6",
+    "ts-loader": "^9.1.1"
+  }
+}
