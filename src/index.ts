@@ -1,3 +1,6 @@
+import ConfigMgr from './conf';
+
 window.onload = () => {
-    console.log("OK");
+    const conf = new ConfigMgr();
+    conf.loadConf();
 }
