@@ -1,5 +1,8 @@
 import YQ from './yq/yq';
 export default class ConfigMgr {
+    arrowStr: string = 'arrow';
+    prizeStr: string = 'prize';
+
     loadConf() {
         YQ.get('data.json', null, (data: XMLHttpRequest | null, status: number) => {
             const strNoData: string = '未能成功获取配置数据 ';
@@ -31,6 +34,25 @@ export default class ConfigMgr {
         titleDiv.innerText = title;
     }
 
+    shrinkList(prizeNameDiv: HTMLDivElement) {
+        const prizeNameDivID: string = prizeNameDiv.id;
+        const prizeID: string = prizeNameDivID.substring(prizeNameDivID.length - 1);
+        const prizeSubListID: string = this.prizeStr + 'SubList' + prizeID;
+        const prizeSubListDiv: HTMLDivElement = YQ.divById(prizeSubListID);
+
+        let iElement: HTMLElement = document.getElementById(prizeNameDiv.id + 'i') as HTMLElement;
+        const isHidden: boolean = (iElement.className.indexOf(`${this.arrowStr}Down`) < 0);
+        if (isHidden) {
+            iElement.className = `${this.arrowStr}i ${this.arrowStr}Down`;
+            prizeSubListDiv.style.display = 'block';
+            prizeNameDiv.style.color = '#FFFF00';
+        } else {
+            iElement.className = `${this.arrowStr}i ${this.arrowStr}Right`;
+            prizeSubListDiv.style.display = 'none';
+            prizeNameDiv.style.color = '#CCC';
+        }
+    }
+
     showList() {
         const listDIV: HTMLDivElement = YQ.divById('list');
         const prizes = window.g_confdata.prize;
@@ -40,17 +62,23 @@ export default class ConfigMgr {
             const prizeName: string = prize[0] as string;
             const prizeNumber: number = prize[1] as number;
             const prizeNameDiv: HTMLDivElement = document.createElement('div');
-            prizeNameDiv.className = 'prizeName';
+            prizeNameDiv.className = this.prizeStr + 'Name';
             prizeNameDiv.id = prizeNameDiv.className + i.toString();
-            prizeNameDiv.innerHTML = '<i class="arrowi arrowDown"></i>' + prizeName;
-            console.log(prizeName);
+            const shrinkIcon: HTMLElement = document.createElement('i');
+            shrinkIcon.className = `${this.arrowStr}i ${this.arrowStr}Down`;
+            shrinkIcon.id = prizeNameDiv.className + i.toString() + 'i';
+            prizeNameDiv.appendChild(shrinkIcon);
+            prizeNameDiv.innerHTML += prizeName;
+            prizeNameDiv.addEventListener('click', () => {
+                this.shrinkList(prizeNameDiv);
+            });
             listDIV.appendChild(prizeNameDiv);
             const prizeNowList: HTMLDivElement = document.createElement('div');
-            prizeNowList.className = 'prizeSubList';
+            prizeNowList.className = this.prizeStr + 'SubList';
             prizeNowList.id = prizeNowList.className + i.toString();
             for (let j = 0; j < prizeNumber; j++) {
                 const prizeUserDiv: HTMLDivElement = document.createElement('div');
-                prizeUserDiv.className = 'prizeUser';
+                prizeUserDiv.className = this.prizeStr + 'User';
                 prizeUserDiv.id = prizeUserDiv.className + j.toString();
                 prizeUserDiv.className += ' t' + prizeNameDiv.id;
                 prizeUserDiv.innerText = '尚未揭晓';
