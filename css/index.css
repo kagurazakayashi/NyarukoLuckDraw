@@ -7,11 +7,18 @@ body {
   color: #fff;
 }
 
+@font-face {
+    font-family: 'webfont';
+    src: url('../fonts/webfont.ttf');
+}
+
 body {
   background: linear-gradient(#da1e0b , #77150a);
+  font-family: 'webfont';
 }
 
 button {
+    font-family: 'webfont';
     cursor: pointer;
 }
 
@@ -85,7 +92,6 @@ button {
 
 .prizeUserNow {
   color: yellow;
-  font-weight: bold;
 }
 
 .prizeUserOK {

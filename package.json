@@ -7,7 +7,8 @@
     "release": "python3 src/yq/yqcss.py css/index.css src/index.css && gulp css html && rm -f src/index.css && mv dist/index.html ./index.html && webpack --mode=production --progress",
     "debug": "python3 src/yq/yqcss.py css/index.css src/index.css && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html && webpack --mode=development --progress",
     "html": "python3 src/yq/yqcss.py css/index.css src/index.css && python3 src/yq/yqcss.py templates dist && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html",
-    "clean": "rm -f index.html dist/* src/*.css"
+    "clean": "rm -f index.html dist/* src/*.css",
+    "font": "python3 json2html.py && font-spider json2html.html && rm -f json2html.html"
   },
   "repository": {
     "type": "git",
