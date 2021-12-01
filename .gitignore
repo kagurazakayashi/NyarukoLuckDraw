@@ -8,5 +8,6 @@ js/*
 design/*
 embedded-web-page_*.html
 data.json
+audio/*
 video/*
 fonts/*

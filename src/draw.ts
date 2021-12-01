@@ -1,5 +1,8 @@
 import YQ from './yq/yq';
 export default class Draw {
+    audioEnable: boolean = true;
+    audioScratch: boolean = true;
+
     prizeUsers: HTMLDivElement[] = [];
     prizeUserStr: string = 'prizeUser';
     prizeUserNowDiv: HTMLDivElement | null = null;
@@ -10,11 +13,13 @@ export default class Draw {
     nameDiv: HTMLDivElement;
     isComplete = false;
     prizeNameDiv: HTMLDivElement;
+    audio: HTMLAudioElement;
 
     constructor() {
         this.nameDiv = YQ.divById('name');
         this.prizeNameDiv = YQ.divById('prize');
         this.btnStart = document.getElementById(this.btnStartStr) as HTMLButtonElement;
+        this.audio = document.getElementById('bgm') as HTMLAudioElement;
         this.btnStart.addEventListener('click', () => {
             if (this.isComplete) {
                 this.complete(true);
@@ -63,6 +68,9 @@ export default class Draw {
             return;
         }
         this.startBtnEnable(true);
+        if (this.audioEnable) {
+            this.audio.play();
+        }
         this.timer = self.setInterval(() => {
             this.timerI(this);
         }, 10);
@@ -130,6 +138,12 @@ export default class Draw {
     }
 
     end() {
+        if (this.audioEnable) {
+            this.audio.pause();
+            if (this.audioScratch) {
+                this.audio.currentTime = 0;
+            }
+        }
         window.clearInterval(this.timer as number);
         this.timer = null;
         const winName: string = this.randomName();
