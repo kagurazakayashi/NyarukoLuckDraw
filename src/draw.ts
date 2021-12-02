@@ -115,14 +115,14 @@ export default class Draw {
         }
     }
 
-    complete(isShowComplete:boolean) {
+    complete(isShowComplete: boolean) {
         this.btnStart.className = `${this.btnStartStr} ${this.btnStartStr}X`;
         this.btnStart.innerText = '抽选结束';
         this.isComplete = true;
         if (isShowComplete) {
             YQ.divById('prizeing').innerText = '';
-            this.prizeNameDiv.innerHTML = '恭喜';
-            this.nameDiv.innerText = '所有中奖者';
+            this.prizeNameDiv.innerHTML = '抽奖结束';
+            this.nameDiv.innerText = '恭喜中奖者';
         }
     }
 

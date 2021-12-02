@@ -57,6 +57,7 @@ export default class ConfigMgr {
         const listDIV: HTMLDivElement = YQ.divById('list');
         const prizes = window.g_confdata.prize;
         let i = 0;
+        let lastPrizeName = '';
         for (const key in prizes) {
             const prize: string | number[] = prizes[key];
             const prizeName: string = prize[0] as string;
@@ -69,6 +70,7 @@ export default class ConfigMgr {
             shrinkIcon.id = prizeNameDiv.className + i.toString() + 'i';
             prizeNameDiv.appendChild(shrinkIcon);
             prizeNameDiv.innerHTML += prizeName;
+            lastPrizeName = prizeName;
             prizeNameDiv.addEventListener('click', () => {
                 this.shrinkList(prizeNameDiv);
             });
@@ -86,6 +88,9 @@ export default class ConfigMgr {
             }
             listDIV.appendChild(prizeNowList);
             i++;
+        }
+        if (lastPrizeName.length > 0) {
+            YQ.divById('prize').innerText = lastPrizeName;
         }
     }
 }

@@ -6,7 +6,7 @@ from string import punctuation
 
 htmlTemp: list[str] = [
     "<!DOCTYPE html><head><style>@font-face{font-family:'webfont';src:url('fonts/webfont.ttf');}body{font-family:'webfont';}</style></head><body>", "</body></html>"]
-extWord: str = '尚未揭晓停止结束!恭喜所有者'
+extWord: str = '尚未揭晓停止结束!恭喜抽奖者'
 
 
 def loadtemp(file: str) -> str:
