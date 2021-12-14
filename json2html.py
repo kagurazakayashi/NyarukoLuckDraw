@@ -10,7 +10,7 @@ extWord: str = '尚未揭晓停止结束!恭喜抽奖者'
 
 
 def loadtemp(file: str) -> str:
-    f = open(file, encoding='UTF-8')
+    f = open(file, 'r', encoding='UTF-8')
     lines: str = f.read()
     f.close()
     return lines

@@ -9,8 +9,4 @@ window.onload = () => {
     const conf = new ConfigMgr();
     conf.loadConf();
     const draw = new Draw();
-    const video = new Video();
-    window.onresize = () => {
-        video.resize();
-    }
 }

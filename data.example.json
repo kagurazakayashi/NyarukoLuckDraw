@@ -1,5 +1,7 @@
 {
     "title": "抽奖活动",
+    "se_audio": "audio/audio.mp3",
+    "bg_video": "video/video.mp4",
     "prize": [
         ["一等奖",1],
         ["二等奖",2],

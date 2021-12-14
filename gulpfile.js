@@ -21,6 +21,6 @@ gulp.task('css', async () => {
 // 压缩html
 gulp.task('html', async () => {
     await gulp.src(['./src/*.html','./templates/*.html']) // 输入文件
-        .pipe(html()) // 执行压缩
+        .pipe(html({ collapseWhitespace: true, removeComments: true })) // 删除空格和注释
         .pipe(gulp.dest('./dist/')); // 输出文件
 });

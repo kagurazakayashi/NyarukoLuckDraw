@@ -1,7 +1,9 @@
 import YQ from './yq/yq';
+import Video from './video';
 export default class ConfigMgr {
     arrowStr: string = 'arrow';
     prizeStr: string = 'prize';
+    video:Video | null = null;
 
     loadConf() {
         YQ.get('data.json', null, (data: XMLHttpRequest | null, status: number) => {
@@ -22,6 +24,8 @@ export default class ConfigMgr {
             const json: object = JSON.parse(textData);
             window.g_confdata = json;
             console.log(window.g_confdata);
+            this.loadMedia();
+            this.video = new Video();
             this.showTitle();
             this.showList();
         });
@@ -32,6 +36,30 @@ export default class ConfigMgr {
         document.title = title;
         const titleDiv: HTMLDivElement = YQ.divById('title');
         titleDiv.innerText = title;
+    }
+
+    loadMedia() {
+        const audioEle: HTMLAudioElement = document.createElement('audio');
+        audioEle.id = "bgm";
+        audioEle.src = window.g_confdata.se_audio;
+        audioEle.preload = "auto";
+        audioEle.loop = true;
+        const videoEle: HTMLVideoElement = document.createElement('video');
+        videoEle.id = 'bgvideo'
+        videoEle.autoplay = true;
+        videoEle.loop = true;
+        videoEle.muted = true;
+        const videoSrc: HTMLSourceElement = document.createElement('source');
+        videoSrc.src = window.g_confdata.bg_video;
+        const fileNameUnit: string[] = videoSrc.src.split('.');
+        const extname: string = fileNameUnit[fileNameUnit.length - 1];
+        videoSrc.type = 'video/' + extname;
+        videoEle.appendChild(videoSrc);
+        document.body.appendChild(videoEle);
+        document.body.appendChild(audioEle);
+        window.onresize = () => {
+            this.video!.resize();
+        }
     }
 
     shrinkList(prizeNameDiv: HTMLDivElement) {
