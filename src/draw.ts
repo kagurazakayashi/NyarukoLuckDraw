@@ -13,13 +13,12 @@ export default class Draw {
     nameDiv: HTMLDivElement;
     isComplete = false;
     prizeNameDiv: HTMLDivElement;
-    audio: HTMLAudioElement;
+    audio: HTMLAudioElement | null = null;
 
     constructor() {
         this.nameDiv = YQ.divById('name');
         this.prizeNameDiv = YQ.divById('prize');
         this.btnStart = document.getElementById(this.btnStartStr) as HTMLButtonElement;
-        this.audio = document.getElementById('bgm') as HTMLAudioElement;
         this.btnStart.addEventListener('click', () => {
             if (this.isComplete) {
                 this.complete(true);
@@ -30,6 +29,25 @@ export default class Draw {
             } else {
                 this.end();
             }
+        });
+        const showList: HTMLElement = document.getElementById('showList') as HTMLElement;
+        showList.addEventListener('click', () => {
+            this.getNames();
+            const nameList: HTMLDivElement = YQ.divById('nameList');
+            nameList.style.display = 'inline-block';
+            if (nameList.innerText.length == 0) {
+                let html: string = `<p>${showList.innerText}</p><hr/>`;
+                for (const name of this.names) {
+                    html += `<span>${name}</span>`;
+                }
+                if (this.names.length % 2 != 0) {
+                    html += `<span>&emsp;</span>`;
+                }
+                nameList.innerHTML = html;
+            }
+            nameList.addEventListener('click', () => {
+                nameList.style.display = 'none';
+            });
         });
     }
 
@@ -69,6 +87,9 @@ export default class Draw {
         }
         this.startBtnEnable(true);
         if (this.audioEnable) {
+            if (!this.audio) {
+                this.audio = document.getElementById('bgm') as HTMLAudioElement;
+            }
             this.audio.play();
         }
         this.timer = self.setInterval(() => {
@@ -139,9 +160,9 @@ export default class Draw {
 
     end() {
         if (this.audioEnable) {
-            this.audio.pause();
+            this.audio!.pause();
             if (this.audioScratch) {
-                this.audio.currentTime = 0;
+                this.audio!.currentTime = 0;
             }
         }
         window.clearInterval(this.timer as number);
