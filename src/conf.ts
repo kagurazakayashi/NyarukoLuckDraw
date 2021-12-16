@@ -23,11 +23,11 @@ export default class ConfigMgr {
             }
             const json: object = JSON.parse(textData);
             window.g_confdata = json;
-            console.log(window.g_confdata);
             this.loadMedia();
             this.video = new Video();
             this.showTitle();
             this.showList();
+            this.exconf();
         });
     }
 
@@ -119,6 +119,14 @@ export default class ConfigMgr {
         }
         if (lastPrizeName.length > 0) {
             YQ.divById('prize').innerText = lastPrizeName;
+        }
+    }
+
+    exconf() {
+        const showList: HTMLElement = document.getElementById('showList') as HTMLElement;
+        if ('publiclist' in window.g_confdata && window.g_confdata.publiclist == 0) {
+            showList.innerHTML = '';
+            showList.style.display = 'none';
         }
     }
 }

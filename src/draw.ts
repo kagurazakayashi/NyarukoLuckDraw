@@ -31,6 +31,9 @@ export default class Draw {
             }
         });
         const showList: HTMLElement = document.getElementById('showList') as HTMLElement;
+        if (showList.style.display == 'none') {
+            return;
+        }
         showList.addEventListener('click', () => {
             this.getNames();
             const nameList: HTMLDivElement = YQ.divById('nameList');
