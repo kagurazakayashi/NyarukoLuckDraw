@@ -8,19 +8,19 @@ body {
 }
 
 @font-face {
-    font-family: 'webfont';
-    src: url('../fonts/webfont.ttf');
+  font-family: "webfont";
+  src: url("../fonts/webfont.ttf");
 }
 
 body {
-  background: linear-gradient(#da1e0b , #77150a);
-  font-family: 'webfont';
+  background: linear-gradient(#da1e0b, #77150a);
+  font-family: "webfont";
   text-shadow: 1px 1px 5px #000;
 }
 
 button {
-    font-family: 'webfont';
-    cursor: pointer;
+  font-family: "webfont";
+  cursor: pointer;
 }
 
 #title {
@@ -121,7 +121,7 @@ button {
   box-shadow: 0px 0px 10px #ccc;
 }
 .btnStartN:hover {
-    box-shadow: 0px 0px 10px #FFF;
+  box-shadow: 0px 0px 10px #fff;
 }
 .btnStartW {
   background-color: #ffff0088;
@@ -159,9 +159,9 @@ button {
   -webkit-transform: rotate(45deg);
 }
 
-#showList {
+#subbtns, #subbtns a, #subbtns a:hover {
   color: skyblue;
-  cursor: pointer;
+  text-decoration: none;
   font-size: 15px;
 }
 

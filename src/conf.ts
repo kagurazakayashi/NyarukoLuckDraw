@@ -128,5 +128,10 @@ export default class ConfigMgr {
             showList.innerHTML = '';
             showList.style.display = 'none';
         }
+        const showCode: HTMLElement = document.getElementById('showCode') as HTMLElement;
+        if ('githublink' in window.g_confdata && window.g_confdata.githublink == 0) {
+            showCode.innerHTML = '';
+            showCode.style.display = 'none';
+        }
     }
 }
