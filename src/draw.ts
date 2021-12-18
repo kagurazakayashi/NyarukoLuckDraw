@@ -30,28 +30,34 @@ export default class Draw {
                 this.end();
             }
         });
-        const showList: HTMLElement = document.getElementById('showList') as HTMLElement;
-        if (showList.style.display == 'none') {
-            return;
-        }
-        showList.addEventListener('click', () => {
-            this.getNames();
-            const nameList: HTMLDivElement = YQ.divById('nameList');
-            nameList.style.display = 'inline-block';
-            if (nameList.innerText.length == 0) {
-                let html: string = `<p>${showList.innerText}</p><hr/>`;
-                for (const name of this.names) {
-                    html += `<span>${name}</span>`;
+        const showList: HTMLLinkElement = document.getElementById('showList') as HTMLLinkElement;
+        if (showList.style.display != 'none') {
+            showList.addEventListener('click', () => {
+                this.getNames();
+                const nameList: HTMLDivElement = YQ.divById('nameList');
+                nameList.style.display = 'inline-block';
+                if (nameList.innerText.length == 0) {
+                    let html: string = `<p>${showList.innerText}</p><hr/>`;
+                    for (const name of this.names) {
+                        html += `<span>${name}</span>`;
+                    }
+                    if (this.names.length % 2 != 0) {
+                        html += `<span>&emsp;</span>`;
+                    }
+                    nameList.innerHTML = html;
                 }
-                if (this.names.length % 2 != 0) {
-                    html += `<span>&emsp;</span>`;
-                }
-                nameList.innerHTML = html;
-            }
-            nameList.addEventListener('click', () => {
-                nameList.style.display = 'none';
+                nameList.addEventListener('click', () => {
+                    nameList.style.display = 'none';
+                });
             });
-        });
+        }
+        const undo: HTMLLinkElement = document.getElementById('undo') as HTMLLinkElement;
+        if (undo.style.display != 'none') {
+            undo.addEventListener('click', () => {
+                this.undo();
+            });
+        }
+        this.startBtnEnable(false);
     }
 
     getPrizeUsers() {
@@ -141,12 +147,13 @@ export default class Draw {
 
     complete(isShowComplete: boolean) {
         this.btnStart.className = `${this.btnStartStr} ${this.btnStartStr}X`;
-        this.btnStart.innerText = '抽选结束';
+        this.btnStart.innerText = '确认最终结果';
         this.isComplete = true;
         if (isShowComplete) {
             YQ.divById('prizeing').innerText = '';
             this.prizeNameDiv.innerHTML = '抽奖结束';
             this.nameDiv.innerText = '恭喜中奖者';
+            YQ.divById('btnStartBox').style.display = 'none';
         }
     }
 
@@ -183,5 +190,33 @@ export default class Draw {
         this.prizeUserNowDiv!.innerText = winName;
         this.startBtnEnable(false);
         this.chkCanNext();
+    }
+
+    undo() {
+        const prizeUserOK: string = ' prizeUserOK';
+        // 倒序搜尋列表中已有姓名的元素
+        for (let i = this.prizeUsers.length - 1; i >= 0; i--) {
+        // for (let i = 0; i < this.prizeUsers.length; i++) {
+            const prizeUser: HTMLDivElement = this.prizeUsers[i];
+            if (prizeUser.className.indexOf(prizeUserOK) != -1) {
+                prizeUser.className = prizeUser.className.replace(prizeUserOK, '');
+                this.prizeNameDiv.innerText = this.prizeUser2PrizeName(prizeUser) ?? '';
+                this.nameDiv.innerText = prizeUser.innerText = '尚未揭晓';
+                break;
+            }
+        }
+    }
+
+    prizeUser2PrizeName(prizeUser: HTMLDivElement): string | null {
+        const classList: string[] = prizeUser.className.split(' ');
+        for (const nClassName of classList) {
+            if (nClassName.indexOf('tprizeName') != -1) {
+                const prizeNameId: string = nClassName.substring(1);
+                const prizeNameDivN: HTMLDivElement = YQ.divById(prizeNameId);
+                const nowPrizeName: string = prizeNameDivN.innerText;
+                return nowPrizeName;
+            }
+        }
+        return null;
     }
 }

@@ -133,5 +133,10 @@ export default class ConfigMgr {
             showCode.innerHTML = '';
             showCode.style.display = 'none';
         }
+        const undo: HTMLElement = document.getElementById('undo') as HTMLElement;
+        if ('undo' in window.g_confdata && window.g_confdata.undo == 0) {
+            undo.innerHTML = '';
+            undo.style.display = 'none';
+        }
     }
 }
