@@ -14,50 +14,62 @@ export default class Draw {
     isComplete = false;
     prizeNameDiv: HTMLDivElement;
     audio: HTMLAudioElement | null = null;
+    showList: HTMLLinkElement;
+    undo: HTMLLinkElement;
+    btnStartBox: HTMLDivElement;
 
     constructor() {
         this.nameDiv = YQ.divById('name');
         this.prizeNameDiv = YQ.divById('prize');
+        this.btnStartBox = YQ.divById('btnStartBox');
         this.btnStart = document.getElementById(this.btnStartStr) as HTMLButtonElement;
         this.btnStart.addEventListener('click', () => {
-            if (this.isComplete) {
-                this.complete(true);
-                return;
-            }
-            if (this.timer == null) {
-                this.start();
-            } else {
-                this.end();
-            }
+            this.btnStartClick();
         });
-        const showList: HTMLLinkElement = document.getElementById('showList') as HTMLLinkElement;
-        if (showList.style.display != 'none') {
-            showList.addEventListener('click', () => {
-                this.getNames();
-                const nameList: HTMLDivElement = YQ.divById('nameList');
-                nameList.style.display = 'inline-block';
-                if (nameList.innerText.length == 0) {
-                    let html: string = `<p>${showList.innerText}</p><hr/>`;
-                    for (const name of this.names) {
-                        html += `<span>${name}</span>`;
-                    }
-                    if (this.names.length % 2 != 0) {
-                        html += `<span>&emsp;</span>`;
-                    }
-                    nameList.innerHTML = html;
-                }
-                nameList.addEventListener('click', () => {
-                    nameList.style.display = 'none';
-                });
+        this.showList = document.getElementById('showList') as HTMLLinkElement;
+        if (this.showList.style.display != 'none') {
+            this.showList.addEventListener('click', () => {
+                this.btnShowListClick();
             });
         }
-        const undo: HTMLLinkElement = document.getElementById('undo') as HTMLLinkElement;
-        if (undo.style.display != 'none') {
-            undo.addEventListener('click', () => {
-                this.undo();
+        this.undo = document.getElementById('undo') as HTMLLinkElement;
+        if (this.undo.style.display != 'none') {
+            this.undo.addEventListener('click', () => {
+                this.btnUndoClick();
             });
         }
         this.startBtnEnable(false);
+    }
+
+    btnStartClick() {
+        if (this.isComplete) {
+            this.complete(true);
+            return;
+        }
+        if (this.timer == null) {
+            this.start();
+        } else {
+            this.end();
+        }
+    }
+
+    btnShowListClick() {
+        this.getNames();
+        const nameList: HTMLDivElement = YQ.divById('nameList');
+        nameList.style.display = 'inline-block';
+        if (nameList.innerText.length == 0) {
+            let html: string = `<p>${this.showList.innerText}</p><hr/>`;
+            for (const name of this.names) {
+                html += `<span>${name}</span>`;
+            }
+            if (this.names.length % 2 != 0) {
+                html += `<span>&emsp;</span>`;
+            }
+            nameList.innerHTML = html;
+        }
+        nameList.addEventListener('click', () => {
+            nameList.style.display = 'none';
+        });
     }
 
     getPrizeUsers() {
@@ -192,11 +204,11 @@ export default class Draw {
         this.chkCanNext();
     }
 
-    undo() {
+    btnUndoClick() {
         const prizeUserOK: string = ' prizeUserOK';
         // 倒序搜尋列表中已有姓名的元素
         for (let i = this.prizeUsers.length - 1; i >= 0; i--) {
-        // for (let i = 0; i < this.prizeUsers.length; i++) {
+            // for (let i = 0; i < this.prizeUsers.length; i++) {
             const prizeUser: HTMLDivElement = this.prizeUsers[i];
             if (prizeUser.className.indexOf(prizeUserOK) != -1) {
                 prizeUser.className = prizeUser.className.replace(prizeUserOK, '');
@@ -218,5 +230,30 @@ export default class Draw {
             }
         }
         return null;
+    }
+
+    keyboard(key: string) {
+        if (this.btnStartBox.style.display == 'none') {
+            return;
+        }
+        switch (key) {
+            case 'Enter':
+                if (this.btnStart.style.display != 'none') {
+                    this.btnStartClick();
+                }
+                break;
+            case 'l':
+                if (this.showList.style.display != 'none') {
+                    this.btnShowListClick();
+                }
+                break;
+            case 'u':
+                if (this.undo.style.display != 'none') {
+                    this.btnUndoClick();
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

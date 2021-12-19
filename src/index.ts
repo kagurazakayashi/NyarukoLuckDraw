@@ -9,4 +9,7 @@ window.onload = () => {
     const conf = new ConfigMgr();
     conf.loadConf();
     const draw = new Draw();
+    document.addEventListener('keyup', function (e) {
+        draw.keyboard(e.key);
+    });
 }
