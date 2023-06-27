@@ -4,9 +4,9 @@
   "description": "简易抽奖程序",
   "main": "index.js",
   "scripts": {
-    "release": "npm run font && python3 src/yq/yqcss.py css/index.css src/index.css && gulp css html && rm -f src/index.css && mv dist/index.html ./index.html && webpack --mode=production --progress",
-    "debug": "python3 src/yq/yqcss.py css/index.css src/index.css && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html && webpack --mode=development --progress",
-    "html": "python3 src/yq/yqcss.py css/index.css src/index.css && python3 src/yq/yqcss.py templates dist && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html",
+    "release": "npm run font && python3 src/libNyaruko_TS/Tools/nyacss.py css/index.css src/index.css && gulp css html && rm -f src/index.css && mv dist/index.html ./index.html && webpack --mode=production --progress",
+    "debug": "python3 src/libNyaruko_TS/Tools/nyacss.py css/index.css src/index.css && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html && webpack --mode=development --progress",
+    "html": "python3 src/libNyaruko_TS/Tools/nyacss.py css/index.css src/index.css && python3 src/libNyaruko_TS/Tools/nyacss.py templates dist && cp src/index.css dist/index.css && rm -f src/index.css && cp src/index.html ./index.html",
     "clean": "rm -f index.html dist/* src/*.css",
     "font": "python3 json2html.py && font-spider json2html.html && rm -f json2html.html"
   },
@@ -40,6 +40,7 @@
   "dependencies": {
     "@types/echarts": "^4.9.7",
     "echarts": "^5.1.1",
+    "font-spider": "^1.3.5",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-htmlmin": "^5.0.1",

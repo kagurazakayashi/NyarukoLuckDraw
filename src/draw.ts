@@ -1,4 +1,5 @@
-import YQ from './yq/yq';
+import NyaDom from "./libNyaruko_TS/nyadom";
+import NyaAs from "./libNyaruko_TS/nyaas";
 export default class Draw {
     audioEnable: boolean = true;
     audioScratch: boolean = true;
@@ -19,9 +20,9 @@ export default class Draw {
     btnStartBox: HTMLDivElement;
 
     constructor() {
-        this.nameDiv = YQ.divById('name');
-        this.prizeNameDiv = YQ.divById('prize');
-        this.btnStartBox = YQ.divById('btnStartBox');
+        this.nameDiv = NyaAs.div(NyaDom.byId('name'));
+        this.prizeNameDiv = NyaAs.div(NyaDom.byId('prize'));
+        this.btnStartBox = NyaAs.div(NyaDom.byId('btnStartBox'));
         this.btnStart = document.getElementById(this.btnStartStr) as HTMLButtonElement;
         this.btnStart.addEventListener('click', () => {
             this.btnStartClick();
@@ -55,7 +56,7 @@ export default class Draw {
 
     btnShowListClick() {
         this.getNames();
-        const nameList: HTMLDivElement = YQ.divById('nameList');
+        const nameList: HTMLDivElement = NyaAs.div(NyaDom.byId('nameList'));
         nameList.style.display = 'inline-block';
         if (nameList.innerText.length == 0) {
             let html: string = `<p>${this.showList.innerText}</p><hr/>`;
@@ -132,7 +133,7 @@ export default class Draw {
             this.prizeUserNowDiv = prizeUser;
             let prizeDivID: string = prizeUser.classList[1];
             prizeDivID = prizeDivID.substring(1);
-            const nowPrizeNameDiv: HTMLDivElement = YQ.divById(prizeDivID);
+            const nowPrizeNameDiv: HTMLDivElement = NyaAs.div(NyaDom.byId(prizeDivID));
             this.prizeNameDiv.innerText = nowPrizeNameDiv.innerText;
             break;
         }
@@ -162,10 +163,10 @@ export default class Draw {
         this.btnStart.innerText = '确认最终结果';
         this.isComplete = true;
         if (isShowComplete) {
-            YQ.divById('prizeing').innerText = '';
+            NyaAs.div(NyaDom.byId('prizeing')).innerText = '';
             this.prizeNameDiv.innerHTML = '抽奖结束';
             this.nameDiv.innerText = '恭喜中奖者';
-            YQ.divById('btnStartBox').style.display = 'none';
+            NyaAs.div(NyaDom.byId('btnStartBox')).style.display = 'none';
         }
     }
 
@@ -224,7 +225,7 @@ export default class Draw {
         for (const nClassName of classList) {
             if (nClassName.indexOf('tprizeName') != -1) {
                 const prizeNameId: string = nClassName.substring(1);
-                const prizeNameDivN: HTMLDivElement = YQ.divById(prizeNameId);
+                const prizeNameDivN: HTMLDivElement = NyaAs.div(NyaDom.byId(prizeNameId));
                 const nowPrizeName: string = prizeNameDivN.innerText;
                 return nowPrizeName;
             }

@@ -1,4 +1,6 @@
-import YQ from './yq/yq';
+import NyaDom from "./libNyaruko_TS/nyadom";
+import NyaAs from "./libNyaruko_TS/nyaas";
+import NyaNetwork from "./libNyaruko_TS/nyanetwork";
 import Video from './video';
 export default class ConfigMgr {
     arrowStr: string = 'arrow';
@@ -6,7 +8,7 @@ export default class ConfigMgr {
     video:Video | null = null;
 
     loadConf() {
-        YQ.get('data.json', null, (data: XMLHttpRequest | null, status: number) => {
+        NyaNetwork.get('data.json', null, (data: XMLHttpRequest | null, status: number) => {
             const strNoData: string = '未能成功获取配置数据 ';
             if (status != 200) {
                 alert(strNoData + status.toString());
@@ -34,7 +36,7 @@ export default class ConfigMgr {
     showTitle() {
         const title: string = window.g_confdata.title;
         document.title = title;
-        const titleDiv: HTMLDivElement = YQ.divById('title');
+        const titleDiv: HTMLDivElement = NyaAs.div(NyaDom.byId('title'));
         titleDiv.innerText = title;
     }
 
@@ -66,7 +68,7 @@ export default class ConfigMgr {
         const prizeNameDivID: string = prizeNameDiv.id;
         const prizeID: string = prizeNameDivID.substring(prizeNameDivID.length - 1);
         const prizeSubListID: string = this.prizeStr + 'SubList' + prizeID;
-        const prizeSubListDiv: HTMLDivElement = YQ.divById(prizeSubListID);
+        const prizeSubListDiv: HTMLDivElement = NyaAs.div(NyaDom.byId(prizeSubListID));
 
         let iElement: HTMLElement = document.getElementById(prizeNameDiv.id + 'i') as HTMLElement;
         const isHidden: boolean = (iElement.className.indexOf(`${this.arrowStr}Down`) < 0);
@@ -82,7 +84,7 @@ export default class ConfigMgr {
     }
 
     showList() {
-        const listDIV: HTMLDivElement = YQ.divById('list');
+        const listDIV: HTMLDivElement = NyaAs.div(NyaDom.byId('list'));
         const prizes = window.g_confdata.prize;
         let i = 0;
         let lastPrizeName = '';
@@ -118,7 +120,7 @@ export default class ConfigMgr {
             i++;
         }
         if (lastPrizeName.length > 0) {
-            YQ.divById('prize').innerText = lastPrizeName;
+            NyaAs.div(NyaDom.byId('prize')).innerText = lastPrizeName;
         }
     }
 
